@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, intial-scale=1.0">
         <title>PortFilio Web Site</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    
+        
     </head>
     <body>
         <div id="header">
             <div class="container">
                 <nav>
                     <img src="https://img.freepik.com/free-vector/hand-drawn-flat-design-anarchy-symbol_23-2149244754.jpg?w=740&t=st=1689413974~exp=1689414574~hmac=8f29471686d7af4611ce1be4cb374286513318df364dd80af745c93f7bd86652" class="logo">
-                    <ul>
+                    <ul id="sidemenu">
                         <li><a href="#header">Home</a></li>
                         <li><a href="#About">About</a></li>
                         <li><a href="#Projects">Projects</a></li>
                         <li><a href="#Portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <i class="fas fa-times" onclick="closemenu()"></i>
                     </ul>
+                    <i class="fas fa-bars" onclick="openmenu()"></i>
                 </nav>
                 <div class="header-text">
                     <p>FullStack Developer</p>
@@ -35,7 +41,7 @@
             <div class="container">
                 <div class="row">
                     <div class="about-col-1">
-                        <img src="C:\Users\Kishore Kumar\Desktop\Images\InShot_20220712_155556709.jpg" >
+                        <img src="profile.png" >
                         </div>
                         <div class="about-col-2">
                             <h1 class="sub-title">About Me</h1>
@@ -46,13 +52,7 @@
                                 And Also Good At React Js And Node Js I Build Emoji App Using React Js.
 
                             </p>
-                            <div class="tab-tittle">
-                                <p class="tab-links active-link">Skills</p>
-                                <p class="tab-links">Projects</p>
-
-
-                            </div>
-                      
+                        
 
                     </div>
 
@@ -107,7 +107,7 @@
                         <div class="layer">
                             <h3>ToDo Web App</h3>
                             <p>A clean and user-friendly Todo web app built with HTML, CSS, and JavaScript.</p>
-                            <a href="https://ashoktod.ccbp.tech/">Learn More</a>
+                            <a href="https://ashoktod.ccbp.tech/"><i class="fas fa-external-link-alt"></i></a>
                         
 
                         </div>
@@ -116,9 +116,9 @@
                     <div class="work">
                         <img src="C:\Users\Kishore Kumar\Desktop\Images\TypingSpeed.png">
                         <div class="layer">
-                            <h3>ToDo Web App</h3>
+                            <h3>TypingSpeed</h3>
                             <p>A clean and user-friendly Todo web app built with HTML, CSS, and JavaScript.</p>
-                            <a href="https://ashoktod.ccbp.tech/">Learn More</a>
+                            <a href="https://ashoktod.ccbp.tech/"><i class="fas fa-external-link-alt"></i></a>
 
                         </div>
                         
@@ -126,9 +126,9 @@
                     <div class="work">
                         <img src="C:\Users\Kishore Kumar\Desktop\Images\Emoji App.png">
                         <div class="layer">
-                            <h3>ToDo Web App</h3>
+                            <h3>Emoji App</h3>
                             <p>A clean and user-friendly Todo web app built with HTML, CSS, and JavaScript.</p>
-                            <a href="https://github.com/Ashok-mangali/EmojiGame.git">Learn More</a>
+                            <a href="https://github.com/Ashok-mangali/EmojiGame.git"><i class="fas fa-external-link-alt"></i></a>
                                                            
 
                         </div>
@@ -137,7 +137,7 @@
                     
 
                 </div>
-                        <a href="https://github.com/Ashok-mangali" class="btn">See More</a>
+                        <a href="https://github.com/Ashok-mangali" class="btn"><i class="fa-brands fa-github"></i>    See More</a>
 
                     </div>
 
@@ -151,23 +151,56 @@
                 <div class="row">
                     <div class="contact-left">
                         <h1 class="sub-title">Contact Me</h1>
-                        <p>aashok59238@gmail.com</p>
-                        <p>8688980197</p>
-                        <div class="social-icons">
-                            <a href="linkedin.com/in/m-ashok-">Linked In</Inp><i class="fab fa-linkedin"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-github"></i></a>
-                            
-                        </div>
+                        <p><i class="fa-regular fa-envelope"></i> aashok59238@gmail.com</p>
+                        <p><i class="fas fa-phone-square-alt"></i> 8688980197</p>
+                        
+                        
+                        <a href="Ashokresume.pdf" class="btn btn2">Download CV</a>
                     </div>
                         <div class="contact-right">
+                            <form name="submit-to-google-sheet">
+                                <input type="text" name="Name" placeholder="Your Name" required>
+                                <input type="text" name="E-mail" placeholder="Your Email" required>
+                                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                                <button type="submit" class="btn btn2">Submit</button>
+                            </form>
+                            <span id="msg"></span>
 
                         
                     </div>
                 </div>
             </div>
+            <div class="copyright">
+                <p>Copyright @ Ashok. <i class="fas fa-heart"></i></p>
+            </div>
         </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzaC3Ty2ZElNZtRae9mp59Jc-dscGKVHpHMte0e9Sj4aVHLooToBjvsUHdtAEarjmq3tw/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message Sent SuccessFully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },1000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
 
-
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
     </body>
 </html>
